@@ -11,7 +11,7 @@
     position: absolute;
 
     background-color: black;
-    height: 144vh;
+    height: 300vh;
     width: 12px;
 
     top: 11%;

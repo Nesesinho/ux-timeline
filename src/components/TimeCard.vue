@@ -24,6 +24,7 @@ const props = defineProps({
 <template>
     <div class="timecard-box" :style="{backgroundColor: props.color}">
       <span></span>
+      <slot></slot>
       <div :class="['text-box', props.side]">
         <h1>{{ props.title }}</h1>
         <h2>{{ props.subtitle }}</h2>
@@ -38,6 +39,7 @@ const props = defineProps({
 
     width: 100%;
     height: 45vh;
+    overflow: hidden;
   }
 
   span {
@@ -66,7 +68,7 @@ const props = defineProps({
 
     transform: translateY(-50%);
 
-    width: 20vw;
+    width: 15vw;
   }
 
   .right {
