@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('fonts/BebasNeue-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('fonts/BebasNeue-Book.otf') format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('fonts/BebasNeue-Light.otf') format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('fonts/BebasNeue-Regular.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('fonts/BebasNeue-Thin.otf') format('opentype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Glacial';
+  src: url('fonts/GlacialIndifference-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  height: max-content;
+  width: 100vw;
+  padding: 5vh 0;
+  overflow-x: hidden;
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  font-weight: normal;
+}
+
+h1, h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+}
+
+p {
+  font-family: "Glacial", sans-serif;
+}
