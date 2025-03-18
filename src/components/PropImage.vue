@@ -38,4 +38,9 @@ const style = computed(() => ({
     left: 50%;
     transform: translateX(-50%);
   }
+
+  .center-y {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 </style>
