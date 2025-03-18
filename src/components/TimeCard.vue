@@ -50,7 +50,7 @@ onMounted(() => {
           <h1>
             {{ props.title }}
           </h1>
-          <a :href="props.link" style="margin: 8px;">
+          <a :href="props.link">
               <div class="link" style="z-index: 100;">
                 <h3 style="color: white;">Clique para mais informações</h3>
               </div>
@@ -138,6 +138,7 @@ onMounted(() => {
     width: 30px;
     height: 30px;
     background-color: black;
+    margin: 8px;
 
     border: 5px solid black;
     border-radius: 50px;
