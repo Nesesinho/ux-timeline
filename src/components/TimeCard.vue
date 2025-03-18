@@ -43,15 +43,29 @@ onMounted(() => {
 
 <template>
     <div :class="['timecard-box', textColor, 'fade-in']" :style="{backgroundColor: props.color}">
-      <a :href="props.link">
-          <div class="link" style="z-index: 100;">
-            <h3 style="color: white;">Clique para mais informações</h3>
-          </div>
-      </a>
-
+      <span></span>
       <slot></slot>
       <div :class="['text-box', props.side]">
-        <h1>{{ props.title }}</h1>
+        <div class="title" v-if="props.side === 'left'">
+          <h1>
+            {{ props.title }}
+          </h1>
+          <a :href="props.link" style="margin: 8px;">
+              <div class="link" style="z-index: 100;">
+                <h3 style="color: white;">Clique para mais informações</h3>
+              </div>
+          </a>
+        </div>
+        <div class="title" style="justify-content: end;" v-else>
+          <a :href="props.link">
+            <div class="link" style="z-index: 100;">
+              <h3 style="color: white;">Clique para mais informações</h3>
+            </div>
+          </a>
+          <h1>
+            {{ props.title }}
+          </h1>
+        </div>
         <div class="subtitle">
           <h2>{{ props.subtitle }}</h2>
           <p><slot name="text"></slot></p>
@@ -76,6 +90,21 @@ onMounted(() => {
     width: 100%;
     height: 45vh;
     overflow: hidden;
+    z-index: 1;
+  }
+
+  span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 10px;
+    top: 16vh;
+
+    border-radius: 5px;
+
+    display: block;
+    background-color: black;
   }
 
   .link {
@@ -86,13 +115,18 @@ onMounted(() => {
     padding: 7px 10px;
     border-radius: 10px;
 
-    top: -8vh;
+    top: -3vh;
     left: 50%;
     transform: translateX(-50%);
 
     width: max-content;
 
     font-family: "Glacial";
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
   }
 
   a:hover .link {
@@ -105,15 +139,8 @@ onMounted(() => {
     height: 30px;
     background-color: black;
 
-    position: absolute;
-    left: 50%;
-    top: 35%;
-
-    transform: translate(-50%, -50%);
-
     border: 5px solid black;
     border-radius: 50px;
-    z-index: 100;
 
     transition: 1s all;
     animation: glowing-border 1.5s infinite alternate;

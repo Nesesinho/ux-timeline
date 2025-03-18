@@ -6,7 +6,6 @@ import PropImage from "/src/components/PropImage.vue"
 
 <template>
   <main>
-    <TimeLine />
     <TimeCard side="left" color="#545454" title="1999" subtitle="MEMEX" link="https://www.tecmundo.com.br/historia/9528-a-historia-da-interface-grafica.htm">
       <template #text>algum texto muito comprido pois preciso textar esse texto</template>
       <PropImage src="/imgs/1945/background.png" width="130%" top="-100" left="-2"/>
@@ -141,12 +140,14 @@ import PropImage from "/src/components/PropImage.vue"
       <PropImage src="/imgs/2024/prop2.png" height="100%" top="0" right="20"/>
       <PropImage src="/imgs/2024/prop3.png" height="130%" top="0" right="-10"/>
       <PropImage src="/imgs/2024/prop4.png" height="50%" top="28" left="5"/>
-    </TimeCard>
+    </TimeCard>´
+    <TimeLine />
   </main>
 </template>
 
 <style scoped>
   main {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
