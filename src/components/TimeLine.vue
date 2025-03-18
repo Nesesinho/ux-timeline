@@ -11,10 +11,10 @@
     position: absolute;
 
     background-color: black;
-    height: 300vh;
+    height: 910vh;
     width: 12px;
 
-    top: 11%;
+    top: 17vh;
     left: 50%;
     transform: translateX(-50%);
 

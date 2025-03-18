@@ -17,23 +17,36 @@ const props = defineProps({
   side: {
     type: String,
     required: true
+  },
+  textColor: {
+    type: String
   }
 });
 </script>
 
 <template>
-    <div class="timecard-box" :style="{backgroundColor: props.color}">
+    <div :class="['timecard-box', textColor]" :style="{backgroundColor: props.color}">
       <span></span>
       <slot></slot>
       <div :class="['text-box', props.side]">
         <h1>{{ props.title }}</h1>
-        <h2>{{ props.subtitle }}</h2>
-        <p><slot name="text"></slot></p>
+        <div class="subtitle">
+          <h2>{{ props.subtitle }}</h2>
+          <p><slot name="text"></slot></p>
+          <div class="moresub">
+            <h2 style="text-align: start"><slot name="moresubtitle"></slot></h2>
+            <p style="text-align: start"><slot name="moretext"></slot></p>
+          </div>
+        </div>
       </div>
     </div>
 </template>
 
 <style scoped>
+  .black * {
+    color: black;
+  }
+
   .timecard-box {
     position: relative;
 
@@ -50,7 +63,7 @@ const props = defineProps({
 
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 35%;
 
     transform: translate(-50%, -50%);
 
@@ -97,5 +110,17 @@ const props = defineProps({
     font-size: 2.2rem;
 
     font-weight: 600;
+  }
+
+  .subtitle {
+    position: relative;
+    overflow-x: visible;
+  }
+
+  .moresub {
+    position: absolute;
+    top: 0;
+    left:120%;
+    width: 10vw;
   }
 </style>
