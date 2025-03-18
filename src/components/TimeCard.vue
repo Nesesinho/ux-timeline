@@ -20,13 +20,21 @@ const props = defineProps({
   },
   textColor: {
     type: String
+  },
+  link: {
+    type: String
   }
 });
 </script>
 
 <template>
     <div :class="['timecard-box', textColor]" :style="{backgroundColor: props.color}">
-      <span></span>
+      <a :href="props.link">
+          <div class="link" style="z-index: 50;">
+            <h3 style="color: white;">Clique para mais informações</h3>
+          </div>
+      </a>
+
       <slot></slot>
       <div :class="['text-box', props.side]">
         <h1>{{ props.title }}</h1>
@@ -39,6 +47,7 @@ const props = defineProps({
           </div>
         </div>
       </div>
+
     </div>
 </template>
 
@@ -55,7 +64,28 @@ const props = defineProps({
     overflow: hidden;
   }
 
-  span {
+  .link {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: transparent;
+    padding: 7px 10px;
+    border-radius: 10px;
+
+    top: -8vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: max-content;
+
+    font-family: "Glacial";
+  }
+
+  a:hover .link {
+    display: block;
+  }
+
+  a {
     display: block;
     width: 30px;
     height: 30px;
@@ -67,8 +97,26 @@ const props = defineProps({
 
     transform: translate(-50%, -50%);
 
+    border: 5px solid black;
     border-radius: 50px;
+    z-index: 20;
 
+    transition: 1s all;
+    animation: glowing-border 1.5s infinite alternate;
+  }
+
+  @keyframes glowing-border {
+      0% {
+        border-color: black;
+      }
+      100% {
+        border-color: red;
+      }
+  }
+
+  a:hover {
+    cursor: pointer;
+    background-color: white;
   }
 
   .text-box {
