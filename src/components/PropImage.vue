@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 
+
 const props = defineProps({
   src: { type: String, required: true },
   top: { type: String },
@@ -12,6 +13,9 @@ const props = defineProps({
   alt: { type: String, default: '' },
   align: { type:String }
 });
+
+const imagePath = props.src;
+const backgroundImage = new URL(imagePath, import.meta.url).href;
 
 const style = computed(() => ({
   top: props.top ? `${props.top}%` : undefined,
@@ -25,7 +29,7 @@ const style = computed(() => ({
 </script>
 
 <template>
-  <img :src="props.src" :alt="alt" :style="style" :class="align">
+  <img :src="backgroundImage" :alt="alt" :style="style" :class="align">
 </template>
 
 

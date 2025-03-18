@@ -156,7 +156,11 @@ import PropImage from "/src/components/PropImage.vue"
     min-height: 100vh;
     height: fit-content;
 
-    overflow-y: visible;
+    overflow-y: hidden;
     overflow-x: hidden;
+  }
+
+  main::-webkit-scrollbar {
+    display: none;
   }
 </style>

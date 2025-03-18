@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from "vue";
 import { defineProps } from 'vue';
 
 const props = defineProps({
@@ -25,12 +26,25 @@ const props = defineProps({
     type: String
   }
 });
+
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+onMounted(() => {
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+});
 </script>
 
 <template>
-    <div :class="['timecard-box', textColor]" :style="{backgroundColor: props.color}">
+    <div :class="['timecard-box', textColor, 'fade-in']" :style="{backgroundColor: props.color}">
       <a :href="props.link">
-          <div class="link" style="z-index: 50;">
+          <div class="link" style="z-index: 100;">
             <h3 style="color: white;">Clique para mais informações</h3>
           </div>
       </a>
@@ -99,7 +113,7 @@ const props = defineProps({
 
     border: 5px solid black;
     border-radius: 50px;
-    z-index: 20;
+    z-index: 100;
 
     transition: 1s all;
     animation: glowing-border 1.5s infinite alternate;
@@ -170,5 +184,16 @@ const props = defineProps({
     top: 0;
     left:120%;
     width: 10vw;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>
