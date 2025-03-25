@@ -120,7 +120,7 @@ import PropImage from "/src/components/PropImage.vue"
       <template #text>Surge o HTML5, trazendo suporte nativo a vídeos, áudio e elementos semânticos</template>
       <PropImage src="/imgs/2008/prop.png" height="90%" bottom="0" right="-10"/>
       <PropImage src="/imgs/2008/prop2.png" height="98%" top="0" left="0"/>
-      <PropImage src="/imgs/2008/man.png" height="110%" bottom="0" left="3"/>
+      <PropImage src="/imgs/2008/man.png" height="110%" bottom="-0.5" left="2.9"/>
     </TimeCard>
     <TimeCard side="right" color="#42969c" title="2014" subtitle="MATERIAL DESIGN" link="">
       <template #text>O Google lança o Material Design, criando diretrizes visuais para aplicativos e sites.</template>
