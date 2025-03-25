@@ -111,8 +111,8 @@ import PropImage from "/src/components/PropImage.vue"
     </TimeCard>
     <TimeCard side="right" color="#244fa2" title="2007" subtitle="IPHONE" link="">
       <template #text> O iPhone revolucionou o UX mobile, tornando o design responsivo essencial.</template>
-      <PropImage src="/imgs/2007/prop3.png" height="100%" bottom="0" left="0"/>
-      <PropImage src="/imgs/2007/prop4.png" height="100%" bottom="0" right="1"/>
+      <PropImage src="/imgs/2007/prop3.png" height="110%" bottom="-7" left="1"/>
+      <PropImage src="/imgs/2007/prop4.png" height="105%" bottom="-2.5" right="1"/>
       <PropImage src="/imgs/2007/prop.png" height="60%" bottom="0" left="4"/>
       <PropImage src="/imgs/2007/prop2.png" height="90%" align="center-y" right="5"/>
     </TimeCard>
