@@ -71,7 +71,7 @@ import PropImage from "/src/components/PropImage.vue"
     <TimeCard side="right" color="#ff9292" title="1994" subtitle="Netscape Navigator" textColor="black" link="https://museucapixaba.com.br/hoje/hypertext-markup-language-html-de-1993/">
       <template #text>O Netscape Navigator introduz menus, botões e barras de rolagem, melhorando a experiência do usuário.</template>
       <PropImage src="/imgs/1994/prop2.png" height="90%" bottom="5" left="2"/>
-      <PropImage src="/imgs/1994/prop.png" height="95%" align="center-y" right="1"/>
+      <PropImage src="/imgs/1994/prop.png" height="95%" top="2" right="1"/>
       <PropImage src="/imgs/1994/animals.png" height="50%" bottom="2" right="-5"/>
       <PropImage src="/imgs/1994/animals2.png" height="90%" bottom="-6" left="-3"/>
     </TimeCard>
@@ -114,13 +114,13 @@ import PropImage from "/src/components/PropImage.vue"
       <PropImage src="/imgs/2007/prop3.png" height="110%" bottom="-7" left="1"/>
       <PropImage src="/imgs/2007/prop4.png" height="105%" bottom="-2.5" right="1"/>
       <PropImage src="/imgs/2007/prop.png" height="60%" bottom="0" left="4"/>
-      <PropImage src="/imgs/2007/prop2.png" height="90%" align="center-y" right="5"/>
+      <PropImage src="/imgs/2007/prop2.png" height="90%" top="4" right="5"/>
     </TimeCard>
     <TimeCard side="left" color="#4078c2" title="2008" subtitle="HTML 5" link="">
       <template #text>Surge o HTML5, trazendo suporte nativo a vídeos, áudio e elementos semânticos</template>
       <PropImage src="/imgs/2008/prop.png" height="90%" bottom="0" right="-10"/>
-      <PropImage src="/imgs/2008/prop2.png" height="98%" align="center-y" left="0"/>
-      <PropImage src="/imgs/2008/man.png" height="110%" bottom="0" left="26" align="center-x"/>
+      <PropImage src="/imgs/2008/prop2.png" height="98%" top="0" left="0"/>
+      <PropImage src="/imgs/2008/man.png" height="110%" bottom="0" left="3"/>
     </TimeCard>
     <TimeCard side="right" color="#42969c" title="2014" subtitle="MATERIAL DESIGN" link="">
       <template #text>O Google lança o Material Design, criando diretrizes visuais para aplicativos e sites.</template>

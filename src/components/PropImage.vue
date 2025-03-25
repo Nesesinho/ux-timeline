@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 
 const image = ref("null");
 const aspectRatio = ref("auto");
@@ -35,12 +35,25 @@ const style = computed(() => ({
   width: props.width ? `${props.width}` : undefined,
   height: props.height ? `${props.height}` : undefined,
   aspectRatio: calcAspectRatio(),
-  position: 'absolute'
+  position: 'absolute',
+  TransitionDuration: `${Math.floor(Math.random() * 3) + 1}s`
 }));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+onMounted(() => {
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+});
 </script>
 
 <template>
-  <img ref="image" :src="backgroundImage" :alt="alt" :style="style" :class="align">
+  <img ref="image" :src="backgroundImage" :alt="alt" :style="style" :class="[align, 'fade-in']">
 </template>
 
 
@@ -57,5 +70,16 @@ const style = computed(() => ({
   .center-y {
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: opacity ease-out, transform ease-out;
+  }
+
+  .fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>
