@@ -7,7 +7,7 @@ import PropImage from "/src/components/PropImage.vue"
 <template>
   <main>
     <TimeCard side="left" color="#545454" title="1999" subtitle="MEMEX" link="https://www.tecmundo.com.br/historia/9528-a-historia-da-interface-grafica.htm">
-      <template #text>algum texto muito comprido pois preciso textar esse texto</template>
+      <template #text>Vannevar Bush propõe o Memex, um sistema de organização e recuperação de informações, precursor da hipertextualidade.</template>
       <PropImage src="/imgs/1945/background.png" width="130%" top="-100" left="-2"/>
       <PropImage src="/imgs/1945/man.png" height="100%" bottom="0" left="15"/>
       <PropImage src="/imgs/1945/furniture.png" right="0" height="85%" bottom="5"/>
@@ -35,7 +35,7 @@ import PropImage from "/src/components/PropImage.vue"
       <template #text> O Xerox Alto é lançado, trazendo um sistema operacional com interface gráfica baseada em janelas.</template>
       <PropImage src="/imgs/1973/background.png" width="90%" top="0" right="2"/>
       <PropImage src="/imgs/1973/furniture2.png" height="100%" bottom="0" right="-4"/>
-      <PropImage src="/imgs/1973/man.png" height="100%" bottom="0" left="14"/>
+      <PropImage src="/imgs/1973/man.png" height="100%" bottom="0" left="17"/>
       <PropImage src="/imgs/1973/furniture.png" height="110%" bottom="0" left="-8"/>
     </TimeCard>
     <TimeCard side="right" color="#f9b566" title="1984" subtitle="Macintosh" textColor="black" link="https://www.tecmundo.com.br/historia/9528-a-historia-da-interface-grafica.htm">
@@ -100,8 +100,8 @@ import PropImage from "/src/components/PropImage.vue"
     </TimeCard>
     <TimeCard side="right" color="#5f3ba7" title="2003" subtitle="WORDPRESS" link="">
       <template #text> Surge o WordPress, facilitando a criação de sites com templates customizáveis..</template>
-      <PropImage src="/imgs/2003/prop2.png" height="100%" bottom="0" left="27"/>
-      <PropImage src="/imgs/2003/prop.png" height="105%" bottom="0" right="0"/>
+      <PropImage src="/imgs/2003/prop2.png" height="100%" bottom="0" left="29"/>
+      <PropImage src="/imgs/2003/prop.png" height="120%" bottom="0" right="0"/>
       <PropImage src="/imgs/2003/prop3.png" height="25%" top="2.1" left=".6"/>
       <PropImage src="/imgs/2003/prop4.png" height="100%" bottom="0" right="0"/>
     </TimeCard>
@@ -120,7 +120,7 @@ import PropImage from "/src/components/PropImage.vue"
       <template #text>Surge o HTML5, trazendo suporte nativo a vídeos, áudio e elementos semânticos</template>
       <PropImage src="/imgs/2008/prop.png" height="90%" bottom="0" right="-10"/>
       <PropImage src="/imgs/2008/prop2.png" height="98%" align="center-y" left="0"/>
-      <PropImage src="/imgs/2008/man.png" height="110%" bottom="0" left="25" align="center-x"/>
+      <PropImage src="/imgs/2008/man.png" height="110%" bottom="0" left="26" align="center-x"/>
     </TimeCard>
     <TimeCard side="right" color="#42969c" title="2014" subtitle="MATERIAL DESIGN" link="">
       <template #text>O Google lança o Material Design, criando diretrizes visuais para aplicativos e sites.</template>
@@ -151,9 +151,10 @@ import PropImage from "/src/components/PropImage.vue"
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     gap: 3vh;
 
-    width: 80%;
+    width: 100%;
     min-height: 100vh;
     height: fit-content;
 
@@ -164,4 +165,5 @@ import PropImage from "/src/components/PropImage.vue"
   main::-webkit-scrollbar {
     display: none;
   }
+
 </style>

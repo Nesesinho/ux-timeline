@@ -87,21 +87,28 @@ onMounted(() => {
   .timecard-box {
     position: relative;
 
-    width: 100%;
-    height: 45vh;
+    width: 80vw;
+    aspect-ratio: 4/1;
+    height: fit-content;
     overflow: hidden;
     z-index: 1;
+  }
+
+  @media (max-width: 850px) {
+    .timecard-box {
+      width: 100vw;
+    }
   }
 
   span {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
-    height: 10px;
-    top: 16vh;
+    width: 3vw;
+    height: .5vw;
+    top: 7vw;
 
-    border-radius: 5px;
+    border-radius: 2px;
 
     display: block;
     background-color: black;
@@ -115,8 +122,8 @@ onMounted(() => {
     padding: 7px 10px;
     border-radius: 10px;
 
-    top: -3vh;
-    left: 50%;
+    top: -7vh;
+    left: 100%;
     transform: translateX(-50%);
 
     width: max-content;
@@ -134,13 +141,15 @@ onMounted(() => {
   }
 
   a {
+    position: relative;
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 2vw;
+    aspect-ratio: 1/1;
+    height: fit-content;
     background-color: black;
     margin: 8px;
 
-    border: 5px solid black;
+    border: .5rem solid black;
     border-radius: 50px;
 
     transition: 1s all;
@@ -194,12 +203,19 @@ onMounted(() => {
     font-weight: 600;
     margin: 0;
     padding: 0;
+
+    transition: all 1s;
   }
 
   h2 {
     font-size: 2.2rem;
 
     font-weight: 600;
+    transition: all 1s;
+  }
+
+  p {
+    transition: all 1s;
   }
 
   .subtitle {

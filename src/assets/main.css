@@ -51,6 +51,30 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 1500px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 4px;
+  }
+}
+
 #app {
   position: relative;
   width: 100vw;

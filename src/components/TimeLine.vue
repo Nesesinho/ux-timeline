@@ -11,10 +11,10 @@
     position: absolute;
 
     background-color: black;
-    height: 911vh;
-    width: 12px;
+    height: 94.8%;
+    aspect-ratio: 1/911;
 
-    top: 17vh;
+    top: 7vw;
     left: 50%;
     transform: translateX(-50%);
 

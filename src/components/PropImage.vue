@@ -1,6 +1,16 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
+const image = ref("null");
+const aspectRatio = ref("auto");
+
+const calcAspectRatio = () => {
+  if (image.value) {
+    const largura = image.value.naturalWidth;
+    const altura = image.value.naturalHeight;
+    aspectRatio.value = `${largura}/${altura}`
+  }
+};
 
 const props = defineProps({
   src: { type: String, required: true },
@@ -24,12 +34,13 @@ const style = computed(() => ({
   right: props.right ? `${props.right}%` : undefined,
   width: props.width ? `${props.width}` : undefined,
   height: props.height ? `${props.height}` : undefined,
+  aspectRatio: calcAspectRatio(),
   position: 'absolute'
 }));
 </script>
 
 <template>
-  <img :src="backgroundImage" :alt="alt" :style="style" :class="align">
+  <img ref="image" :src="backgroundImage" :alt="alt" :style="style" :class="align">
 </template>
 
 
